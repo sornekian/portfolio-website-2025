@@ -5,11 +5,13 @@ import Projects from './pages/Projects.jsx';
 import Services from './pages/Services.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
+import DynamicSpaceBackground from './components/DynamicSpaceBackground.jsx';
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <DynamicSpaceBackground />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
