@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function DynamicSpaceBackground() {
+export default function SpaceBackground() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -11,7 +11,6 @@ export default function DynamicSpaceBackground() {
     const STAR_COUNT = 250;
     let scrollOffset = 0;
     let mouse = { x: -9999, y: -9999 };
-    let angle = 0;
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -59,8 +58,8 @@ export default function DynamicSpaceBackground() {
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
       const orbitRadius = 100;
-      const moonX = centerX + orbitRadius * Math.cos(angle);
-      const moonY = centerY + orbitRadius * Math.sin(angle);
+      const moonX = centerX + orbitRadius * Math.cos(0);
+      const moonY = centerY + orbitRadius * Math.sin(0);
       ctx.beginPath();
       ctx.arc(moonX, moonY, 5, 0, Math.PI * 2);
       ctx.fillStyle = "white";
@@ -113,7 +112,6 @@ export default function DynamicSpaceBackground() {
       });
 
       drawOrbitingMoon();
-      angle += 0.01;
 
       requestAnimationFrame(drawStars);
     };
