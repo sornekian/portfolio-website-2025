@@ -20,9 +20,21 @@ export default function SpaceBackground() {
     const createStars = () => {
       stars = [];
       for (let i = 0; i < STAR_COUNT; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+
+        // Avoid placing a star near the center of the screen
+        if (
+          Math.abs(x - canvas.width / 2) < 50 &&
+          Math.abs(y - canvas.height / 2) < 50
+        ) {
+          i--;
+          continue;
+        }
+
         stars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
+          x,
+          y,
           radius: Math.random() * 1.5 + 0.5,
           speed: Math.random() * 0.5 + 0.1,
           opacity: Math.random(),
@@ -34,7 +46,7 @@ export default function SpaceBackground() {
     const spawnComet = () => {
       comets.push({
         x: -100,
-        y: Math.random() * canvas.height / 2,
+        y: Math.random() * (canvas.height / 2),
         speed: Math.random() * 6 + 4,
         angle: Math.random() * 0.2 - 0.1,
         size: Math.random() * 2 + 1,
@@ -54,17 +66,7 @@ export default function SpaceBackground() {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     };
 
-    const drawOrbitingMoon = () => {
-      const centerX = canvas.width / 2;
-      const centerY = canvas.height / 2;
-      const orbitRadius = 100;
-      const moonX = centerX + orbitRadius * Math.cos(0);
-      const moonY = centerY + orbitRadius * Math.sin(0);
-      ctx.beginPath();
-      ctx.arc(moonX, moonY, 5, 0, Math.PI * 2);
-      ctx.fillStyle = "white";
-      ctx.fill();
-    };
+
 
     const drawStars = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -111,7 +113,7 @@ export default function SpaceBackground() {
         }
       });
 
-      drawOrbitingMoon();
+
 
       requestAnimationFrame(drawStars);
     };
