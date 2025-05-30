@@ -6,19 +6,17 @@ const Navbar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-<<<<<<< HEAD
         <Typography 
           variant="h5" 
           component={RouterLink} 
           to="/" 
           sx={{ 
             mr: 2,
-            textDecoration: 'none', 
+            textDecoration: 'none',
             color: 'inherit',
             fontSize: '1.5rem',
             fontWeight: 400,
-            letterSpacing: '0.5px',
-            textTransform: 'uppercase'
+            letterSpacing: '0.5px'
           }}
         >
           Sarven Ornekian

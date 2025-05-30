@@ -23,8 +23,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-<<<<<<< HEAD
-    fontFamily: '"Radley", serif',
+    fontFamily: 'Radley, serif',
     h1: {
       fontSize: '2.5rem',
       fontWeight: 500,
