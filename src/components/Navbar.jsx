@@ -6,6 +6,7 @@ const Navbar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
+<<<<<<< HEAD
         <Typography 
           variant="h5" 
           component={RouterLink} 

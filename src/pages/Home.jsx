@@ -22,7 +22,8 @@ const Home = () => {
           transition={{ duration: 0.8 }}
         >
           <Typography variant="h2" component="h1" align="center">
-            Welcome to My Portfolio
+<<<<<<< HEAD
+            Welcome to Sarven Ornekian's Portfolio
           </Typography>
         </motion.div>
 

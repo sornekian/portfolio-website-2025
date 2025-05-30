@@ -48,6 +48,7 @@ const Projects = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             >
+<<<<<<< HEAD
               <Card 
                 sx={{ height: '100%' }}
                 onClick={() => handleProjectClick(project.link)}
